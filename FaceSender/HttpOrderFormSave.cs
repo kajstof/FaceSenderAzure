@@ -1,4 +1,3 @@
-
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -27,10 +26,18 @@ namespace FaceSender
             catch (System.Exception ex)
             {
                 log.Error("Something went wrong", ex);
-                return new BadRequestObjectResult("Received data invalid");
+                return new BadRequestObjectResult("Something went wrong");
             }
 
-            return (ActionResult)new OkObjectResult("Order processed");
+            return (ActionResult)new OkObjectResult($"Order processed");
         }
+    }
+
+    public class PhotoOrder : TableEntity
+    {
+        public string CustomerEmail { get; set; }
+        public string FileName { get; set; }
+        public string Resolutions { get; set; }
+
     }
 }
