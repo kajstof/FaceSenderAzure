@@ -1,4 +1,3 @@
-
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -35,9 +34,9 @@ namespace FaceSender
                     firstElement.RequiredHeight,
                     firstElement.RequiredWidth
                 });
-
-                return new NotFoundResult();
             }
+
+            return new NotFoundResult();
         }
     }
 }
