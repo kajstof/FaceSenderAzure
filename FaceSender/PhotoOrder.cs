@@ -1,6 +1,8 @@
-﻿namespace FaceSender
+﻿using Microsoft.WindowsAzure.Storage.Table;
+
+namespace FaceSender
 {
-    internal class PhotoOrder
+    public class PhotoOrder : TableEntity
     {
         public string CustomerEmail { get; set; }
         public string FileName { get; set; }
